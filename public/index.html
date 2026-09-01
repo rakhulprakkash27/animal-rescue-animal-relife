@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescue Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Rescue Connect home"><span class="brand-mark">+</span><span>rescue<span class="brand-accent">connect</span></span></a>
+    <span class="header-status"><span class="status-dot"></span>Teams online</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Community-powered animal care</p>
+      <h1>Be the eyes<br><em>they need.</em></h1>
+      <p class="intro-copy">Spot an animal that needs help? Share what you see and we’ll alert the nearest rescue teams right away.</p>
+      <div class="team-strip"><span class="team-avatar blue">BC</span><span class="team-avatar green">PA</span><span class="team-avatar coral">AR</span><span class="team-count">Blue Cross and 12 partner teams receive reports</span></div>
+    </section>
+
+    <section class="report-panel" aria-labelledby="report-heading">
+      <div class="panel-heading"><div><p class="section-label">New report</p><h2 id="report-heading">Tell us what happened</h2></div><span class="step-indicator">01 <span>/ 01</span></span></div>
+      <form id="report-form">
+        <div class="upload-zone" id="upload-zone"><input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp" required><div class="upload-icon">↑</div><strong>Drop a photo here</strong><span>or browse from your device · JPG, PNG, WebP · max 8 MB</span><div class="preview-wrap hidden" id="preview-wrap"><img id="preview" alt="Selected animal preview"><button type="button" id="remove-image" aria-label="Remove selected image">×</button></div></div>
+        <div class="field-grid"><label>What animal is it?<select name="animalType" required><option value="">Choose one</option><option>Dog</option><option>Cat</option><option>Bird</option><option>Wildlife</option><option>Other</option></select></label><label>How urgent is it?<select name="urgency" required><option value="">Choose urgency</option><option value="urgent">Urgent - immediate danger</option><option value="soon">Needs help soon</option><option value="safe">Safe for now</option></select></label></div>
+        <label>Where did you see them?<input name="location" placeholder="Street, landmark, or area" required></label>
+        <label>What do rescue teams need to know?<textarea name="description" rows="3" placeholder="Describe their condition and what you observed..." required></textarea></label>
+        <label>How can a team reach you?<input name="contact" placeholder="Phone or email" required></label>
+        <button class="submit-button" type="submit"><span>Send rescue alert</span><span aria-hidden="true">→</span></button>
+        <p class="form-note">Your report is shared only with verified rescue partners.</p>
+        <div class="feedback hidden" id="feedback" role="status"></div>
+      </form>
+    </section>
+  </main>
+  <footer><span>Rescue Connect</span><span>Every report can change a life.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
